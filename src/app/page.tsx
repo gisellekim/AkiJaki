@@ -1,5 +1,18 @@
+"use client"
+
+import Head from "next/head"
+import { MenuContextProvider } from "@/context/context"
+import { MainComponent } from "@/components/MainComponent"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-10"></main>
+    <>
+      <Head>
+        <title>Welcome to Aki Jaki!</title>
+      </Head>
+      <MenuContextProvider>
+        <MainComponent />
+      </MenuContextProvider>
+    </>
   )
 }
