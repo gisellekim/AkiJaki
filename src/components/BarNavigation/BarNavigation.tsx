@@ -25,7 +25,7 @@ export const BarNavigation = () => {
           <div className="image-container">
             <a href="#">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 layout="fill"
                 alt="logo"
                 className="image"

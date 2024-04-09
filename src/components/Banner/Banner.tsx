@@ -28,10 +28,10 @@ export const Banner = () => {
         <Image
           src={`${
             viewSize === ViewSizes.Mobile
-              ? "/banner_1_mobile.png"
+              ? "/banner_1_mobile.webp"
               : viewSize === ViewSizes.Tablet
-              ? "/banner_1_tablet.png"
-              : "/banner_1.png"
+              ? "/banner_1_tablet.webp"
+              : "/banner_1.webp"
           }`}
           layout="fill"
           alt="banner"
