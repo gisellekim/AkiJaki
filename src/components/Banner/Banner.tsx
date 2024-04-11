@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import useScreenSize from "@/hook/useScreenSize"
+import imageDesktop from "../../../public/banner_1.webp"
+import imageTablet from "../../../public/banner_1_tablet.webp"
+import imageMobile from "../../../public/banner_1_mobile.webp"
 
 const enum ViewSizes {
   Mobile = "mobile",
@@ -9,33 +12,24 @@ const enum ViewSizes {
 }
 
 export const Banner = () => {
-  const [viewSize, setViewSize] = useState<string>(ViewSizes.Desktop)
   const screenSize = useScreenSize()
+  let bannerImage = imageDesktop
 
-  useEffect(() => {
-    if (screenSize.width <= 767) {
-      setViewSize(ViewSizes.Mobile)
-    } else if (screenSize.width <= 972) {
-      setViewSize(ViewSizes.Tablet)
-    } else {
-      setViewSize(ViewSizes.Desktop)
-    }
-  }, [screenSize.width])
+  if (screenSize.width <= 767) {
+    bannerImage = imageMobile
+  } else if (screenSize.width <= 972) {
+    bannerImage = imageTablet
+  }
 
   return (
     <div className="w-full image-container">
       <a href="#">
         <Image
-          src={`${
-            viewSize === ViewSizes.Mobile
-              ? "/banner_1_mobile.webp"
-              : viewSize === ViewSizes.Tablet
-              ? "/banner_1_tablet.webp"
-              : "/banner_1.webp"
-          }`}
+          src={bannerImage}
           layout="fill"
           alt="banner"
           className="image"
+          priority
         />
       </a>
     </div>
