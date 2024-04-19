@@ -1,12 +1,9 @@
-type TButtonUser = {
-  onClick: () => void
-}
-
-export const ButtonUser = ({ onClick }: TButtonUser) => {
+export const ButtonUser = () => {
   return (
-    <button type="button" id="user-menu-button" onClick={onClick}>
+    <button type="button" id="user-menu-button">
       <span className="sr-only">Open user menu</span>
       <svg
+        id="user-menu-icon"
         className="w-7 lg:w-5"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"

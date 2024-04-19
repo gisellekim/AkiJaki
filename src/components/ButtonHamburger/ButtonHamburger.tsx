@@ -1,17 +1,9 @@
-type TButtonHamburger = {
-  onClick: () => void
-}
-
-export const ButtonHamburger = ({ onClick }: TButtonHamburger) => {
+export const ButtonHamburger = () => {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="md:hidden"
-      id="hamburger-menu-button"
-    >
+    <button type="button" className="md:hidden" id="hamburger-menu-button">
       <span className="sr-only">Open menu</span>
       <svg
+        id="hamburger-menu-icon"
         className="w-5 h-5"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"

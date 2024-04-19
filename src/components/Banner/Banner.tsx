@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react"
+"use client"
+
 import Image from "next/image"
 import useScreenSize from "@/hook/useScreenSize"
 import imageDesktop from "../../../public/banner_1.webp"
 import imageTablet from "../../../public/banner_1_tablet.webp"
 import imageMobile from "../../../public/banner_1_mobile.webp"
-
-const enum ViewSizes {
-  Mobile = "mobile",
-  Tablet = "tablet",
-  Desktop = "desktop",
-}
 
 export const Banner = () => {
   const screenSize = useScreenSize()
@@ -23,10 +18,11 @@ export const Banner = () => {
 
   return (
     <div className="w-full image-container">
-      <a href="#">
+      <a href="#" className="relative">
         <Image
           src={bannerImage}
-          layout="fill"
+          fill
+          sizes="100vw"
           alt="banner"
           className="image"
           priority
